@@ -27,14 +27,15 @@ function playRound(computerSelection, playerSelection) {
         return "You Lose! Rock beats scissors"
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
         return "You Win! Scissors beats Paper"
+    } else {
+        return "Invalid option!"
     }
 }
 function game(){
     for (let i = 0; i < 5; i++){
         let playerSelection = prompt("What's your choice?: (rock, paper, scissors)")
-        playerSelection.toLowerCase()
         let computerSelection = getComputerChoice()
-        console.log(playRound(computerSelection, playerSelection))
+        console.log(playRound(computerSelection, playerSelection.toLowerCase()))
     }
 }
 game()
