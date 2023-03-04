@@ -1,3 +1,4 @@
+const results = document.querySelector('.results');
 function getComputerChoice() {
     let randomInt = Math.floor(Math.random() * 3)
     switch (randomInt) {
@@ -14,21 +15,33 @@ function getComputerChoice() {
 }
 function playRound(computerSelection, playerSelection) {
     if (computerSelection === playerSelection){
-        console.log( "Draw")
+        const result = document.createElement('div');
+        result.textContent = "Draw";
+        results.appendChild(result);
     } else if (playerSelection == "rock" && computerSelection == "paper"){
-        console.log( "You Lose! Paper beats Rock")
+        const result = document.createElement('div');
+        result.textContent = "You Lose! Paper beats Rock";
+        results.appendChild(result);
     } else if (playerSelection == "rock" && computerSelection == "scissors"){
-        console.log( "You Win! Rock beats Scissors")
+        const result = document.createElement('div');
+        result.textContent = "You Win! Rock beats Scissors";
+        results.appendChild(result);
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
-        console.log( "You Lose! Scissors beats Paper")
+        const result = document.createElement('div');
+        result.textContent = "You Lose! Scissors beats Paper";
+        results.appendChild(result);
     } else if (playerSelection == "paper" && computerSelection == "rock"){
-        console.log( "You Win! Paper beats Rock")
+        const result = document.createElement('div');
+        result.textContent = "You Win! Paper beats Rock";
+        results.appendChild(result);
     } else if (playerSelection == "scissors" && computerSelection == "rock"){
-        console.log( "You Lose! Rock beats scissors")
+        const result = document.createElement('div');
+        result.textContent = "You Lose! Rock beats scissors";
+        results.appendChild(result);
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
-        console.log( "You Win! Scissors beats Paper")
-    } else {
-        console.log( "Invalid option!")
+        const result = document.createElement('div');
+        result.textContent = "You Win! Scissors beats Paper";
+        results.appendChild(result);
     }
 }
 const buttons = document.querySelector('.buttons');
