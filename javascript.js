@@ -14,28 +14,29 @@ function getComputerChoice() {
 }
 function playRound(computerSelection, playerSelection) {
     if (computerSelection === playerSelection){
-        return "Draw"
+        console.log( "Draw")
     } else if (playerSelection == "rock" && computerSelection == "paper"){
-        return "You Lose! Paper beats Rock"
+        console.log( "You Lose! Paper beats Rock")
     } else if (playerSelection == "rock" && computerSelection == "scissors"){
-        return "You Win! Rock beats Scissors"
+        console.log( "You Win! Rock beats Scissors")
     } else if (playerSelection == "paper" && computerSelection == "scissors"){
-        return "You Lose! Scissors beats Paper"
+        console.log( "You Lose! Scissors beats Paper")
     } else if (playerSelection == "paper" && computerSelection == "rock"){
-        return "You Win! Paper beats Rock"
+        console.log( "You Win! Paper beats Rock")
     } else if (playerSelection == "scissors" && computerSelection == "rock"){
-        return "You Lose! Rock beats scissors"
+        console.log( "You Lose! Rock beats scissors")
     } else if (playerSelection == "scissors" && computerSelection == "paper"){
-        return "You Win! Scissors beats Paper"
+        console.log( "You Win! Scissors beats Paper")
     } else {
-        return "Invalid option!"
+        console.log( "Invalid option!")
     }
 }
-function game(){
-    for (let i = 0; i < 5; i++){
-        let playerSelection = prompt("What's your choice?: (rock, paper, scissors)")
-        let computerSelection = getComputerChoice()
-        console.log(playRound(computerSelection, playerSelection.toLowerCase()))
-    }
-}
-game()
+const buttons = document.querySelector('.buttons');
+buttons.addEventListener('click', function getPlayerChoice(e){
+    if (!e.target.id) return;
+    playerSelection = e.target.id;
+    playRound(getComputerChoice(), playerSelection);
+});
+
+
+
